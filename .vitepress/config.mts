@@ -4,6 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "Lambda Live Debugger",
   description: "Remote debugging AWS Lambda functions",
+  base: "/vitepress-test/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
