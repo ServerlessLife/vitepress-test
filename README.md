@@ -131,12 +131,12 @@ The configuration is saved to `lldebugger.config.ts`.
 Example `lldebugger.config.ts`:
 
 ```typescript
-import { type LldConfigTs } from 'lambda-live-debugger';
+import { type LldConfigTs } from "lambda-live-debugger";
 
 export default {
-  framework: 'cdk',
-  context: ['environment=development'],
-  region: 'eu-central-1',
+  framework: "cdk",
+  context: ["environment=development"],
+  region: "eu-central-1",
   observable: false,
   verbose: false,
   //getLambdas: async (foundLambdas) => {
@@ -229,7 +229,7 @@ getLambdas: async (foundLambdas, config) => {
 
 ```typescript
 getLambdas: async (foundLambdas, config) => {
-  return foundLambdas?.filter((l) => l.functionName.includes('myfunction'));
+  return foundLambdas?.filter((l) => l.functionName.includes("myfunction"));
 };
 ```
 
@@ -241,8 +241,8 @@ getLambdas: async (foundLambdas, config) => {
   if (foundLambdas) {
     for (const lambda of foundLambdas) {
       lambda.codePath = lambda.codePath
-        .replace('/dist/', '/src/')
-        .replace('.js', '.ts');
+        .replace("/dist/", "/src/")
+        .replace(".js", ".ts");
     }
   }
 };
