@@ -6,16 +6,15 @@ export default defineConfig({
   description: "Remote debugging AWS Lambda functions",
   base: "/vitepress-test/",
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  sitemap: {
+    hostname: "https://www.lldebugger.com",
+  },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     search: {
       provider: "local",
     },
-
     siteTitle: "Lambda Live Debugger",
-
     logo: "/logo.png",
-
     sidebar: [
       {
         text: "Introduction",
@@ -42,7 +41,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "Observability Mode", link: "#observability-mode" },
-          { text: "Monorepo Setup", link: "#monorepo-setup" },
+          { text: "Monorepo", link: "#monorepo-setup" },
           { text: "Removing", link: "#removing" },
         ],
       },
@@ -58,7 +57,7 @@ export default defineConfig({
           },
           { text: "SAM", link: "#aws-serverless-application-model-sam" },
           { text: "Terraform", link: "#terraform" },
-          { text: "Custom setup", link: "#custom-setup" },
+          { text: "Custom Setup", link: "#custom-setup" },
         ],
       },
       { text: "Authors and Contributors", link: "#authors" },

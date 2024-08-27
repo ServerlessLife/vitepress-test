@@ -2,7 +2,7 @@
 
 ![Logo](logo.png)
 
-Lambda Live Debugger ([GitHub](https://github.com/ServerlessLife/lambda-live-debugger)) is an indispensable tool for debugging AWS Lambda functions from your computer, even though they are deployed in the cloud. It supports Lambdas written in JavaScript or TypeScript.
+Lambda Live Debugger is an indispensable tool for debugging AWS Lambda functions from your computer, even though they are deployed in the cloud. It supports Lambdas written in JavaScript or TypeScript.
 
 This tool offers similar functionality to [SST](https://sst.dev/) and [Serverless Framework v4](https://www.serverless.com/blog/serverless-framework-v4-general-availability), with the addition of an Observability Mode.
 
@@ -53,6 +53,14 @@ The tool generates temporary files in the `.lldebugger` folder, which can be del
 If the tool is working well for you, please fill out the general [FEEDBACK FORM](https://forms.gle/v6ekZtuB45Rv3EyW9). This helps me understand the interest in the tool and encourages further development.
 
 You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife). Please, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
+
+### Reporting an Issue
+
+- Make sure the bug hasn't already been reported. If you fount it has been, add a "+1" comment so I know there are multiple users struggling with the same issue. If possible, add some additional info.
+- **Enable verbose logging and provide the full log.**
+- **Specify the exact framework version (CDK, SLS, SAM ...) and the exact Lambda Live Debugger version.**
+- Describe your setup in detail, or better yet, provide a sample project.
+- Use descriptive titles with prefixes like "bug:", "help:", "feature:", or "discussion:".
 
 ## Getting Started
 
@@ -208,7 +216,7 @@ Only the basic setup is supported. Check the [test case](https://github.com/Serv
 
 I am not a Terraform developer, so I only know the basics. Please provide a sample project so I can build better support.
 
-### Custom setup
+### Custom Setup
 
 Configuration file `lldebugger.config.ts` enables you to modify the list of Lambdas, change the code path, esBuild configuration, or provide your own list of Lambdas, thereby supporting support **any framework**. For this to work, install Lambda Live Debugger locally in the project.
 
@@ -307,14 +315,6 @@ Check the [GitHub issues](https://github.com/ServerlessLife/lambda-live-debugger
 For the current list of missing features, please refer to the [GitHub issues](https://github.com/ServerlessLife/lambda-live-debugger/issues) page. The most significant missing features at the moment are MFA authentication and additional Terraform configurations.
 
 If you have a new feature idea, please create and issue.
-
-## Reporting an Issue
-
-- Make sure the bug hasn't already been reported. If you fount it has been, add a "+1" comment so I know there are multiple users struggling with the same issue. If possible, add some additional info.
-- **Enable verbose logging and provide the full log.**
-- **Specify the exact framework version (CDK, SLS, SAM ...) and the exact Lambda Live Debugger version.**
-- Describe your setup in detail, or better yet, provide a sample project.
-- Use descriptive titles with prefixes like "bug:", "help:", "feature:", or "discussion:".
 
 ## Authors
 
