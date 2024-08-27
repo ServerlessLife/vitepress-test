@@ -1,6 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+# layout: home
 
 hero:
   name: Lambda Live Debugger
@@ -20,7 +20,5 @@ hero:
       text: How It Works?
       link: /#how-it-works
 ---
-
-# AAA
 
 <!--@include: ./README.md-->

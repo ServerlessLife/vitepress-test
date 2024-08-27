@@ -15,23 +15,7 @@ It supports the following frameworks:
 - Any other framework or setup by implementing a simple function in TypeScript
 - ... (Need support for another framework? Let me know!)
 
-## Early Alpha State
-
-**This project is in the early alpha stage. Your feedback is incredibly valuable. Please let me know if it works for you or if you encounter any issues. I've tested many scenarios, but people can configure their projects and TypeScript settings in numerous ways. The tool is flexible and can be adjusted to fit your setup in most cases without needing additional features. If you need help, please let me know. Any suggestions for improvements are welcome.**
-
-If the tool is working well for you, please fill out the general [FEEDBACK FORM](https://forms.gle/v6ekZtuB45Rv3EyW9). This helps me understand how extensively the tool has been tested and whether there is a general interest in its further development.
-
-If you've encountered a bug, need help, or would like to request additional features, please create an issue on [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues).
-
-Contact me via:
-
-- [Feedback Form](https://forms.gle/v6ekZtuB45Rv3EyW9)
-- [GitHub Issues](https://github.com/ServerlessLife/lambda-live-debugger/issues)
-- [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife)
-
-Also, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
-
-## The Problem Statement
+## Why?
 
 Serverless is amazing and solves many issues with traditional systems. However, writing code for Lambda functions can be challenging. The cycle of writing, deploying, running, fixing, and redeploying is time-consuming and tedious. You could use tools to run Lambda locally or use unit/integration tests; those approaches often don't replicate the actual environment closely enough.
 
@@ -60,13 +44,15 @@ In case you do not want to debug all functions and add Layer to them, you can li
 
 The tool generates temporary files in the `.lldebugger` folder, which can be deleted after debugging. The wizard can add `.lldebugger` to `.gitignore` for you.
 
-## Development Process
+## Help and Feedback
 
-Since you deploy code to a real AWS account, it's best to have a dedicated environment only for yourself. It could be your personal environment or an environment created for a feature. That is [common practice when developing serverless systems](https://theburningmonk.com/2019/09/why-you-should-use-temporary-stacks-when-you-do-serverless/). If that's not feasible due to organizational or technical reasons, use Observability Mode.
+**The tool has been thoroughly tested across many scenarios. It is flexible and can be adjusted to fit almost any setup. However, projects and TypeScript settings can be configured in numerous ways. If you need help or encounter a bug, please let me know by opening a [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues). This will not only help you but also others, as I can improve the tool and the documentation. Any suggestions for improvements are also welcome.**
 
-## Observability Mode
+![We Need You](./we_need_you.webp)
 
-In Observability Mode, Lambda Live Debugger intercepts requests and sends them to your computer without waiting for a response. The Lambda continues as usual. The response from your machine is ignored. This mode can be used in the development, testing, or even, if you are an adventurous, production environment. It samples requests every 3 seconds by default (configurable with an `interval` setting) to avoid overloading the system.
+If the tool is working well for you, please fill out the general [FEEDBACK FORM](https://forms.gle/v6ekZtuB45Rv3EyW9). This helps me understand the interest in the tool and encourages further development.
+
+You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife). Please, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
 
 ## Getting Started
 
@@ -88,7 +74,7 @@ npm install lambda-live-debugger
 
 _(If installed locally, you must prefix all commands with `npx`, if they are not part of `scripts` in `package.json`.)_
 
-## Running the Tool
+### Running the Debugger
 
 With default profile, region, and other default settings:
 
@@ -104,7 +90,7 @@ lld -w
 
 The configuration is saved to `lldebugger.config.ts`.
 
-### CLI Parameters
+## CLI Parameters
 
 ```
  -V, --version                   output the version number
@@ -126,7 +112,7 @@ The configuration is saved to `lldebugger.config.ts`.
  -h, --help                      display help for command
 ```
 
-## Configuration file lldebugger.config.ts
+## Configuration file
 
 Example `lldebugger.config.ts`:
 
@@ -174,6 +160,14 @@ Now, you have to press F5 or press Run -> Start Debugging, and you can set break
 
 For other tools, please send documentation to include here. WebStorm instructions are especially needed.
 
+## Development Process
+
+Since you deploy code to a real AWS account, it's best to have a dedicated environment only for yourself. It could be your personal environment or an environment created for a feature. That is [common practice when developing serverless systems](https://theburningmonk.com/2019/09/why-you-should-use-temporary-stacks-when-you-do-serverless/). If that's not feasible due to organizational or technical reasons, use Observability Mode.
+
+## Observability Mode
+
+In Observability Mode, Lambda Live Debugger intercepts requests and sends them to your computer without waiting for a response. The Lambda continues as usual. The response from your machine is ignored. This mode can be used in the development, testing, or even, if you are an adventurous, production environment. It samples requests every 3 seconds by default (configurable with an `interval` setting) to avoid overloading the system.
+
 ## Monorepo Setup
 
 Set the `subfolder` parameter if your framework is in a subfolder.
@@ -194,7 +188,7 @@ To also remove the Layer:
 lld -r=all
 ```
 
-## Framework-Specific Notes
+## Frameworks
 
 ### AWS CDK v2
 
@@ -214,7 +208,7 @@ Only the basic setup is supported. Check the [test case](https://github.com/Serv
 
 I am not a Terraform developer, so I only know the basics. Please provide a sample project so I can build better support.
 
-### Custom framework implementation and adjustment
+### Custom setup
 
 Configuration file `lldebugger.config.ts` enables you to modify the list of Lambdas, change the code path, esBuild configuration, or provide your own list of Lambdas, thereby supporting support **any framework**. For this to work, install Lambda Live Debugger locally in the project.
 
@@ -322,12 +316,14 @@ If you have a new feature idea, please create and issue.
 - Describe your setup in detail, or better yet, provide a sample project.
 - Use descriptive titles with prefixes like "bug:", "help:", "feature:", or "discussion:".
 
-## Authors:
+## Authors
 
 - [Marko (ServerlessLife)](https://www.serverlesslife.com/)
 - ⭐ Your name here for big code contributions
 
-## Contributors (alphabetical):
+## Contributors
+
+(alphabetical)
 
 - ⭐ Your name here for notable code or documentation contributions or sample projects submitted with a bug report that resulted in tool improvement.
 
