@@ -46,13 +46,13 @@ The tool generates temporary files in the `.lldebugger` folder, which can be del
 
 ## Help and Feedback
 
-**The tool has been thoroughly tested across many scenarios. It is flexible and can be adjusted to fit almost any setup. However, projects and TypeScript settings can be configured in numerous ways. If you need help or encounter a bug, please let me know by opening a [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues). This will not only help you but also others, as I can improve the tool and the documentation. Any suggestions for improvements are also welcome.**
+**The tool has been thoroughly tested across many scenarios. It is flexible and can be adjusted to fit almost any setup. However, projects and TypeScript settings can be configured in numerous ways. If you need help or encounter a bug, please let me know by opening a [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues). This will not only help you but also others, as I can improve the tool and the documentation.**
 
 ![We Need You](./we_need_you.webp)
 
 If the tool is working well for you, please fill out the general [FEEDBACK FORM](https://forms.gle/v6ekZtuB45Rv3EyW9). This helps me understand the interest in the tool and encourages further development.
 
-You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife). Please, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
+You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife) or email [marko@serverlesslife.com](mailto:marko@serverlesslife.com). Please, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
 
 ### Reporting an Issue
 
@@ -60,7 +60,6 @@ You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverle
 - **Enable verbose logging and provide the full log.**
 - **Specify the exact framework version (CDK, SLS, SAM ...) and the exact Lambda Live Debugger version.**
 - Describe your setup in detail, or better yet, provide a sample project.
-- Use descriptive titles with prefixes like "bug:", "help:", "feature:", or "discussion:".
 
 ## Getting Started
 

@@ -5,7 +5,27 @@ export default defineConfig({
   title: "Lambda Live Debugger",
   description: "Remote debugging AWS Lambda functions",
   base: "/vitepress-test/",
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  /* prettier-ignore */
+  head: [
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' }],
+    ['meta', { name: 'language', content: 'English' }],
+    ['meta', { name: 'revisit-after', content: '1 days' }],
+    ['meta', { name: 'author', content: 'Marko (ServerlessLife)' }],
+    ['keywords', {}, 'aws, lambda, debugger, serverless, aws-lambda, javascript, typescript, dev-tools, lambda-debugger, aws-cdk, serverless-framework, sls, aws-sam, sam, terraform, local-debugging, cloud-development'],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vitepress-logo-mini.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/vitepress-logo-mini.png' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:locale', content: 'en' }],
+    ['meta', { property: 'og:title', content: 'Lambda Live Debugger | Remote debugging AWS Lambda functions' }],
+    ['meta', { property: 'og:site_name', content: 'Lambda Live Debugger' }],
+    ['meta', { property: 'og:image', content: 'https://lldebugger.com/vitepress-og.jpg' }],
+    ['meta', { property: 'og:url', content: 'https://lldebugger.com/' }],
+
+    ['meta', { property: 'twitter:card', content: 'summary' }],
+    ['meta', { property: 'twitter:site', content: '@serverlessl' }],
+
+  ],
   sitemap: {
     hostname: "https://www.lldebugger.com",
   },
