@@ -25,6 +25,18 @@ export default defineConfig({
     ['meta', { property: 'twitter:card', content: 'summary' }],
     ['meta', { property: 'twitter:site', content: '@serverlessl' }],
 
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-DWK00ZDX76' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DWK00ZDX76');`
+    ]
   ],
   sitemap: {
     hostname: "https://www.lldebugger.com",
@@ -81,23 +93,11 @@ export default defineConfig({
         ],
       },
       { text: "Authors and Contributors", link: "#authors" },
-      { text: "Declarment", link: "#declarment" },
-      // { text: "Contributors", link: "#contributors" },
-
-      // { text: "Know issues", link: "#know-issues" },
-      // { text: "Missing Features", link: "#missing-features" },
-      // { text: "Reporting an Issue", link: "#reporting-an-issue" },
-      // { text: "Authors", link: "#authors" },
-      // { text: "Contributors", link: "#contributors" },
-      //
+      { text: "Disclaimer", link: "#disclaimer" },
     ],
 
     socialLinks: [
       { icon: "github", link: "https://github.com/vuejs/vitepress" },
     ],
-    footer: {
-      message: "Released under the MIT License.",
-      copyright: "Copyright © 2024-present Marko (ServerlessLife)",
-    },
   },
 });

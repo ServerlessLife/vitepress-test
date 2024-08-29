@@ -23,7 +23,7 @@ Serverless is amazing and solves many issues with traditional systems. However, 
 
 Lambda Live Debugger connects to your deployed Lambda, routes requests to your computer, and sends responses back to the deployed Lambda. This allows you to debug locally, but the system behaves as if the code is running in the cloud with the same permissions. In case of code changes, you do not have to redeploy. The code is reloaded automatically without deploying or even restarting the debugger.
 
-The tool attaches Lambda Extensions (via a Layer), intercepts, and relays calls to AWS IoT. AWS IoT transfers messages between your Lambda and local machine. If the Lambda is written in TypeScript, it's transpiled to JavaScript. The code is executed via the Node Worker Thread.
+The tool attaches Lambda Extensions (via a Layer), intercepts, and relays calls to AWS IoT. AWS IoT transfers messages between your Lambda and the local machine. If the Lambda is written in TypeScript, it's transpiled to JavaScript. The code is executed via the Node Worker Thread.
 
 ![Architecture](./architecture.drawio.png)
 
@@ -36,27 +36,27 @@ AWS keys generated on the cloud for Lambda are transferred to the local environm
 
 Lambda Live Debugger makes the following changes to your AWS infrastructure:
 
-- Deploys Lambda Layer
+- Deploys the Lambda Layer
 - Attaches the Layer to each Lambda you're debugging
 - Adds a policy to the Lambda Role for AWS IoT access
 
-In case you do not want to debug all functions and add Layer to them, you can limit to the ones you need via the `function` parameter.
+In case you do not want to debug all functions and add the Layer to them, you can limit to the ones you need via the `function` parameter.
 
 The tool generates temporary files in the `.lldebugger` folder, which can be deleted after debugging. The wizard can add `.lldebugger` to `.gitignore` for you.
 
 ## Help and Feedback
 
-**The tool has been thoroughly tested across many scenarios. It is flexible and can be adjusted to fit almost any setup. However, projects and TypeScript settings can be configured in numerous ways. If you need help or encounter a bug, please let me know by opening a [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues). This will not only help you but also others, as I can improve the tool and the documentation.**
+**The tool has been thoroughly tested across many scenarios. It is flexible and can be adjusted to fit almost any setup. However, projects and TypeScript settings can be configured in numerous ways. If you need help or encounter a bug, please let me know by opening a [GitHub Issue](https://github.com/ServerlessLife/lambda-live-debugger/issues). This will not only help you but also others, because I can improve the tool and the documentation.**
 
 ![We Need You](./we_need_you.webp)
 
 If the tool is working well for you, please fill out the general [FEEDBACK FORM](https://forms.gle/v6ekZtuB45Rv3EyW9). This helps me understand the interest in the tool and encourages further development.
 
-You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife) or email [marko@serverlesslife.com](mailto:marko@serverlesslife.com). Please, check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
+You can also contact me via [LinkedIn](http://www.linkedin.com/in/marko-serverlesslife) or email [marko@serverlesslife.com](mailto:marko@serverlesslife.com). Please check out my blog: [www.serverlesslife.com](https://www.serverlesslife.com) and follow me on [X (Twitter)](https://twitter.com/ServerlessL).
 
 ### Reporting an Issue
 
-- Make sure the bug hasn't already been reported. If you fount it has been, add a "+1" comment so I know there are multiple users struggling with the same issue. If possible, add some additional info.
+- Make sure the bug hasn't already been reported. If you find that it has been, add a "+1" comment so that I know there are multiple users struggling with the same issue. If possible, add some additional info.
 - **Enable verbose logging and provide the full log.**
 - **Specify the exact framework version (CDK, SLS, SAM ...) and the exact Lambda Live Debugger version.**
 - Describe your setup in detail, or better yet, provide a sample project.
@@ -89,7 +89,7 @@ With default profile, region, and other default settings:
 lld
 ```
 
-You probably need to tweak some settings. You can do it via CLI parameters or, better, run the wizard:
+You probably need to tweak some settings. You can do it via CLI parameters or, even better, run the wizard:
 
 ```
 lld -w
@@ -119,7 +119,7 @@ The configuration is saved to `lldebugger.config.ts`.
  -h, --help                      display help for command
 ```
 
-## Configuration file
+## Configuration File
 
 Example `lldebugger.config.ts`:
 
@@ -139,7 +139,7 @@ export default {
 } satisfies LldConfigTs;
 ```
 
-The setting are the same as for CLI parameters.
+The settings are the same as for the CLI parameters.
 
 ### Debugging
 
@@ -173,7 +173,7 @@ Since you deploy code to a real AWS account, it's best to have a dedicated envir
 
 ## Observability Mode
 
-In Observability Mode, Lambda Live Debugger intercepts requests and sends them to your computer without waiting for a response. The Lambda continues as usual. The response from your machine is ignored. This mode can be used in the development, testing, or even, if you are an adventurous, production environment. It samples requests every 3 seconds by default (configurable with an `interval` setting) to avoid overloading the system.
+In Observability Mode, Lambda Live Debugger intercepts requests and sends them to your computer without waiting for a response. The Lambda continues as usual. The response from your machine is ignored. This mode can be used in the development, testing, or even, if you are adventurous, production environment. It samples requests every 3 seconds by default (configurable with an `interval` setting) to avoid overloading the system.
 
 ## Monorepo Setup
 
@@ -187,7 +187,7 @@ To remove Lambda Live Debugger from your AWS account
 lld -r
 ```
 
-This detaches the Layer from your Lambdas and removes the IoT permission policy. It will not remove the Layer as others might use it.
+This detaches the Layer from your Lambdas and removes the IoT permission policy. It will not remove the Layer because others might use it.
 
 To also remove the Layer:
 
@@ -217,7 +217,7 @@ I am not a Terraform developer, so I only know the basics. Please provide a samp
 
 ### Custom Setup
 
-Configuration file `lldebugger.config.ts` enables you to modify the list of Lambdas, change the code path, esBuild configuration, or provide your own list of Lambdas, thereby supporting support **any framework**. For this to work, install Lambda Live Debugger locally in the project.
+Configuration file `lldebugger.config.ts` enables you to modify the list of Lambdas, change the code path, esBuild configuration, or provide your own list of Lambdas, thereby support **any framework**. For this to work, install Lambda Live Debugger locally in the project.
 
 ```typescript
 getLambdas: async (foundLambdas, config) => {
@@ -235,7 +235,7 @@ getLambdas: async (foundLambdas, config) => {
 ```
 
 **Modify code path:**\
-For example, when the framework has only a list of JavaScript files, but you transpiled them from TypeScript with your own solution.
+For example, when the framework only has a list of JavaScript files, but you transpiled them from TypeScript with your own solution.
 
 ```typescript
 getLambdas: async (foundLambdas, config) => {
@@ -305,7 +305,7 @@ export default {
 } satisfies LldConfigTs;s
 ```
 
-## Know issues
+## Known Issues
 
 Check the [GitHub issues](https://github.com/ServerlessLife/lambda-live-debugger/issues).
 
@@ -318,7 +318,7 @@ If you have a new feature idea, please create and issue.
 ## Authors
 
 - [Marko (ServerlessLife)](https://www.serverlesslife.com/)
-- ⭐ Your name here for big code contributions
+- ⭐ Your name here for big code contributions.
 
 ## Contributors
 
@@ -326,6 +326,6 @@ If you have a new feature idea, please create and issue.
 
 - ⭐ Your name here for notable code or documentation contributions or sample projects submitted with a bug report that resulted in tool improvement.
 
-## Declarment
+## Disclaimer
 
-Lambda Live Debugger is provided "as is", without warranty of any kind, express or implied. Use it at your own risk, and be mindful of potential impacts on performance, security, and costs when using it in your AWS environment.
+Lambda Live Debugger is provided "as is," without warranty of any kind, expressed or implied. Use it at your own risk, and be mindful of potential impacts on performance, security, and costs when using it in your AWS environment.
